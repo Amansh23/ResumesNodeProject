@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/profilepage.css">
+</head>
+<body>
+    <div id="main">
+        <form action="/upload" id="one" method="post" enctype="multipart/form-data">
+            <input type="file" value="file" name="images" id="upload">
+        </form>
+        <div id="layer1">
+            <div id="profilebox">
+                <div class="profilephotu">
+                    <img src="/images/upload/<%= data.File %>" alt="">
+                    <div class="profilebutton">
+                        <h2>Change Profile</h2> 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="layer2">
+            <div id="headingbox">
+                <h1>Hii, <%= data.username  %></h1>
+            </div>
+            <div id="mainbox">
+                <div id="box">
+                    <form class="form" action="/post" method="post">
+                     <textarea name="newpost" class="newpost" placeholder="Post Something!!!"></textarea>
+                     <button class="postbtn" type="submit" value="Post" >POST</button>
+                    </form>
+                </div>
+            </div>
+            <% data.posts.forEach(function(posts){ %>
+            <div id="postbox">
+              <h1><%= posts.post %></h1>
+              <h2><%= posts.likes.length %> Likes</h2>
+              <a href="/likes/<%= posts._id %>"> <%= `${(posts.likes.indexOf(data._id)=== -1)?"Like":"DisLike"}`%></a>
+              <div id="commentbox">
+                <% posts.comments.forEach(function(c){ %>
+               
+                <h2><%= c.name %></h2>
+                <h3> <%= c.comment %></h3>  
+               
+                <%   }) %> 
+              </div>
+              <form action="/comment/<%=  posts._id  %>" method="post">
+              <input class="input" name="comment" placeholder="Leave a comment here !" type="text">
+              <button type="submit" class="commentbtn"  value=" Comment">Comment</button>
+            </form>
+            </div>
+            <% }) %>
+        </div>
+        <div id="layer3">
+           <div class="box1"><a href="/logout">LOGOUT</a></div>
+           <div class="box2"><a href="/allpost">All POSTS</a></div>
+           <div class="box3"><a href="/backtologinpage">BacK</a></div>
+
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="/javascripts/postpage.js"></script>
+</html>

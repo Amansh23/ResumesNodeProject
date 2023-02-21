@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    width: 100%;
+    height: 45vmax;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main #box{
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main #box #left{
+    width: 40%;
+    height: 100%;
+    padding: 20px;
+}
+
+
+
+#main #box #left .tab1{
+    min-height: 10vh;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+}
+
+
+#main #box #left .tab1 h1{
+    font-size: 30px ;
+    font-family: gilroy Semibold;
+    color: rgb(117, 138, 209);
+}
+/* 
+#main #box #left .tab1:hover{
+
+} */
+
+#main #box #left .tab1::-webkit-scrollbar{
+    display: none;
+}
+
+#main #box #left .tab2{
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: auto;
+}
+
+#main #box #left .tab2 .onlinetab{
+    border-radius: 10px;
+    padding: 10px  5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'gilroy SemiBold';
+    color:rgb(117, 138, 209) ;
+}
+#main #box #left .tab2 .onlinetab .onlinemark{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-right: 10px;
+
+}
+#main #box #left .tab2::-webkit-scrollbar{
+    display: none;
+}
+
+
+#main #box #right{
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+#main #box #right #textarea{
+    width: 100%;
+    height: 10%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+#main #box #right #messagebox{
+    width: 100%;
+    height: 54vh;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+#main #box #right #messagebox #r1{
+    width: 50%;
+    min-height: 10vh;
+    background-color: rgb(117, 138, 209);
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 43vh;
+}
+#main #box #right #messagebox #r1::-webkit-scrollbar{
+    display: none;
+}
+
+#main #box #right #option{
+    width: 100%;
+    min-height: 5vh;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    align-items: center;
+}
+#main #box #right #option .a{
+    text-decoration: none;
+    font-family: gilroy Semibold;
+    font-size: 15px;
+    color:rgb(117, 138, 209) ;
+}
+
+
+#main #box #right #messagebox #r1 .h2{
+width: 100%;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+color: white;
+}
+
+#main #box #right #messagebox #r1 .h2 h2{
+font-size: 15px;
+font-family: gilroy Semibold;
+color: white;
+}
+
+#main #box #right #messagebox #r1 .p{
+   width: 100%;
+   overflow: auto;
+  }
+  
+  #main #box #right #messagebox #r1 .p p{
+  font-size: 12px;
+  font-family: gilroy Semibold;
+  color: white;
+  }
+
+  
+#main #box #right #messagebox #r1 .p::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+
+
+#main #box #right #messagebox #l1{
+    width: 50%;
+    min-height: 10vh;
+    background-color: white;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+#main #box #right #messagebox #l1::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+#main #box #right #typing{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 15px ;
+    color:rgb(117, 138, 209) ;
+    font-family: gilroy SemiBold;
+
+}
+
+#main #box #right #messagebox #l1 .h2{
+width: 100%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+color: rgb(117, 138, 209);
+
+}
+
+#main #box #right #messagebox #l1 .h2 h2{
+font-size: 15px;
+font-family: gilroy Semibold;
+color: rgb(117, 138, 209);
+}
+
+#main #box #right #messagebox #l1 .p{
+   width: 100%;
+   overflow: auto;
+  }
+  
+  #main #box #right #messagebox #l1 .p p{
+  font-size: 12px;
+  font-family: gilroy Semibold;
+  color: rgb(117, 138, 209);
+  }
+
+  
+#main #box #right #messagebox #l1 .p::-webkit-scrollbar{
+    display: none;
+}
+
+
+@media(max-width:400px){
+    #main{
+        height: 115vmax;
+    }
+    #main #box{
+        flex-direction: column;
+    }
+    #main #box #left{
+        width: 125%;
+
+    }
+    #main #box #right #option{
+        width: 200%;
+    }
+    #main #box #right #messagebox{
+        width: 200%;
+    }
+    #main #box #right #textarea {
+        width: 200%;
+    }
+    #main #box #right #messagebox #r1{
+        margin-left: 21vh;
+    }
+}

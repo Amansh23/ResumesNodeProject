@@ -1,0 +1,114 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(140, 172, 231);
+}
+#container{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(56, 73, 110);
+  opacity: 1;
+  transform-origin: center;
+}
+.img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.icon{
+  width: 15%;
+  height: 32%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.h1{
+ position: absolute;
+ top: 15%;
+ left: 38%;
+ 
+}
+.h1 h1{
+  font-family: gilroy Medium;
+  font-size: 50px;
+  font-weight: 500;
+  color:white;
+}
+
+
+.h2{
+  position: absolute;
+  top: 30%;
+  left: 26%;
+  
+ }
+ .h2 a{
+  text-decoration: none;
+   font-family: gilroy Medium;
+   font-size: 30px;
+   font-weight: 500;
+   color:white;
+ }
+
+
+ 
+.h3{
+  position: absolute;
+  top: 30%;
+  right: 26%;
+  
+ }
+ .h3 a{
+   font-family: gilroy Medium;
+   text-decoration: none;
+   font-size: 30px;
+   font-weight: 500;
+   color:white;
+ }
+
+ 
+.h4{
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  
+ }
+ .h4 h2{
+   font-family: gilroy Medium;
+   font-size: 30px;
+   font-weight: 500;
+   color:white;
+ }
+
+ @media(max-width:400px){
+   .h1{
+     left: 10%;
+   }
+   .h1 h1{
+     font-size: 35px;
+   }
+   .h2{
+     top: 31%;
+     left: 20%;
+   }
+   .h3{
+     top: 50%;
+     left: 23%;
+   }
+   .h3 a{
+     font-size: 27px;
+   }
+   .h4{
+    top: 40%;
+    left: 43%;
+  }
+ }

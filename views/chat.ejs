@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/chat.css">
+</head>
+<body>
+   <div id="main">
+       <div id="box">
+           <div id="left">
+              <div class="tab1">
+                    <h1> HII, <span> <%= loggedInUser.username %> </span> </h1>
+              </div>
+              <div class="tab2">
+                   
+              </div>
+           </div>
+           <div id="right">
+               <div id="option">
+                   <a class="a" href="/logout">logout</a><a class="a" href="/backtologinpage">Back to Choose</a>
+               </div>
+                   <div id="messagebox">
+                   </div>
+                   <div id="typing"></div>
+                    <textarea name="textarea" id="textarea"></textarea>
+           </div>
+       </div>
+   </div>
+
+   <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+   <script>
+       var socket = io();
+       var username = document.querySelector(".tab1 h1 span").textContent;
+       socket.emit("username", username)
+        function sender(){
+                var textmessage =  document.querySelector("#textarea").value
+                socket.emit("msg",textmessage) ;     
+                console.log("hii")
+        }
+   
+       document.querySelector("#textarea").addEventListener("keydown",function(dets){
+         if(dets.keyCode === 13){
+           sender();
+           document.querySelector("#textarea").value = '';
+       }
+       })
+   
+       
+       socket.on("reply",function(replymessage){
+           if(replymessage.userid === socket.id){
+               console.log(replymessage)
+             document.querySelector("#messagebox").innerHTML += ` <div id="r1">
+                              <div class="h2">
+                               <h2>${replymessage.username}</h2>
+                              </div>
+                              <div class="p">
+                                  <p>${replymessage.textmessage}</p>
+                              </div>
+                          </div>`
+           }
+           else{
+           document.querySelector("#messagebox").innerHTML += ` <div id="l1">
+                             <div class="h2">
+                                 <h2>${replymessage.username}</h2>
+                             </div>
+                             <div class="p">
+                                 <p>${replymessage.textmessage}</p>
+                             </div>
+                          </div>`; 
+           }
+           var objDiv = document.querySelector("#messagebox");
+          objDiv.scrollTop = objDiv.scrollHeight;
+       })
+   
+   
+       socket.on("onlineusername",function(userarr){
+            var clutter = ''
+            userarr.forEach(function(val){
+            clutter += ` <div class="onlinetab">
+                           <h2>${val}</h2>
+                           <div class="onlinemark"></div>
+                       </div>`
+            })
+            document.querySelector(".tab2").innerHTML = clutter;
+       })
+   
+       document.querySelector("#textarea").addEventListener("keydown",function(dets){
+            if(dets.keyCode !== 13){
+              socket.emit("typing", username);
+            }
+       })
+   
+       socket.on("usertyping",function(value){
+            let type = document.querySelector("#typing")
+            type.innerText = `${value} is typing...`
+            setTimeout(function(){
+            type.innerText = '';
+            },500);
+       })
+
+
+       document.querySelector(".a").addEventListener("click",function(e){
+           console.log("chal raha hai")
+           socket.emit("disconnect")
+       })
+   
+   </script>
+</body>
+</html>
